@@ -1,0 +1,449 @@
+{
+  "updated_at": "2026-03-05T10:00:02.073301+00:00",
+  "fetch_mode": "scrapling",
+  "active_sources": 44,
+  "total_sources": 55,
+  "items_written": 120,
+  "sources": {
+    "BBC World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 188,
+      "error": "",
+      "url": "http://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    "Al Jazeera": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 83,
+      "error": "",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml"
+    },
+    "France24": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 60,
+      "error": "",
+      "url": "https://www.france24.com/en/rss"
+    },
+    "DW": {
+      "ok": true,
+      "items": 13,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 67,
+      "error": "",
+      "url": "https://rss.dw.com/rdf/rss-en-world"
+    },
+    "NPR World": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 76,
+      "error": "",
+      "url": "https://feeds.npr.org/1004/rss.xml"
+    },
+    "NPR Business": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 44,
+      "error": "",
+      "url": "https://feeds.npr.org/1006/rss.xml"
+    },
+    "NPR Health": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 43,
+      "error": "",
+      "url": "https://feeds.npr.org/1008/rss.xml"
+    },
+    "Guardian World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 68,
+      "error": "",
+      "url": "https://www.theguardian.com/world/rss"
+    },
+    "Guardian Business": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 134,
+      "error": "",
+      "url": "https://www.theguardian.com/business/rss"
+    },
+    "Guardian Sport": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 39,
+      "error": "",
+      "url": "https://www.theguardian.com/sport/rss"
+    },
+    "NYT World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 52,
+      "error": "",
+      "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    },
+    "NYT Business": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 32,
+      "error": "",
+      "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"
+    },
+    "FT World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 560,
+      "error": "",
+      "url": "https://www.ft.com/world?format=rss"
+    },
+    "CNBC World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 158,
+      "error": "",
+      "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html"
+    },
+    "CNBC Tech": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 153,
+      "error": "",
+      "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html"
+    },
+    "Bloomberg": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 310,
+      "error": "",
+      "url": "https://feeds.bloomberg.com/business/news.rss"
+    },
+    "WSJ World": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 47,
+      "error": "",
+      "url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    "WSJ Business": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 31,
+      "error": "",
+      "url": "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml"
+    },
+    "BBC Sport": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 375,
+      "error": "",
+      "url": "http://feeds.bbci.co.uk/sport/rss.xml?edition=int"
+    },
+    "BBC Business": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 144,
+      "error": "",
+      "url": "http://feeds.bbci.co.uk/news/business/rss.xml"
+    },
+    "BBC Health": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 73,
+      "error": "",
+      "url": "http://feeds.bbci.co.uk/news/health/rss.xml"
+    },
+    "ESPN": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 246,
+      "error": "",
+      "url": "https://www.espn.com/espn/rss/news"
+    },
+    "ESPN F1": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 250,
+      "error": "",
+      "url": "https://www.espn.com/espn/rss/f1/news"
+    },
+    "Sky Sports": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 75,
+      "error": "",
+      "url": "https://www.skysports.com/rss/12040"
+    },
+    "Yahoo Sports": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 255,
+      "error": "",
+      "url": "https://sports.yahoo.com/rss/"
+    },
+    "CBS Sports": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 22,
+      "error": "",
+      "url": "https://www.cbssports.com/rss/headlines/"
+    },
+    "Healthline": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 295,
+      "error": "not well-formed (invalid token): line 1, column 0",
+      "url": "https://www.healthline.com/rss/news"
+    },
+    "Medical News Today": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 474,
+      "error": "not well-formed (invalid token): line 1, column 0",
+      "url": "https://www.medicalnewstoday.com/rss"
+    },
+    "WebMD": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 2051,
+      "error": "<urlopen error [Errno -5] No address associated with hostname>",
+      "url": "https://rssfeeds.webmd.com/rss/rss.aspx?RSSSource=RSS_PUBLIC"
+    },
+    "WHO News": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 69,
+      "error": "not well-formed (invalid token): line 3, column 347",
+      "url": "https://www.who.int/feeds/entity/news/en/rss.xml"
+    },
+    "Defense One": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 310,
+      "error": "",
+      "url": "https://www.defenseone.com/rss/all/"
+    },
+    "The Diplomat": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 40,
+      "error": "",
+      "url": "https://thediplomat.com/feed/"
+    },
+    "Kyiv Independent": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 95,
+      "error": "not well-formed (invalid token): line 1, column 751226",
+      "url": "https://kyivindependent.com/feed/"
+    },
+    "Ukrinform": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 224,
+      "error": "",
+      "url": "https://www.ukrinform.net/rss/block-lastnews"
+    },
+    "UN News": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 120,
+      "error": "",
+      "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+    },
+    "Politico EU": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 62,
+      "error": "",
+      "url": "https://www.politico.eu/feed/"
+    },
+    "Foreign Policy": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 47,
+      "error": "",
+      "url": "https://foreignpolicy.com/feed/"
+    },
+    "Axios": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 225,
+      "error": "",
+      "url": "https://api.axios.com/feed/"
+    },
+    "CNN": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 246,
+      "error": "",
+      "url": "http://rss.cnn.com/rss/edition.rss"
+    },
+    "Washington Post": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 131,
+      "error": "",
+      "url": "https://feeds.washingtonpost.com/rss/world"
+    },
+    "Brownstone": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 64,
+      "error": "",
+      "url": "https://brownstone.org/feed/"
+    },
+    "The American Conservative": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 62,
+      "error": "",
+      "url": "https://www.theamericanconservative.com/rss"
+    },
+    "Antiwar": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 527,
+      "error": "syntax error: line 1, column 61",
+      "url": "https://www.antiwar.com/rss"
+    },
+    "Consortium News": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 469,
+      "error": "",
+      "url": "https://consortiumnews.com/feed/"
+    },
+    "MintPress News": {
+      "ok": true,
+      "items": 10,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 444,
+      "error": "",
+      "url": "https://mintpressnews.com/feed/"
+    },
+    "Grayzone": {
+      "ok": true,
+      "items": 12,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 19,
+      "error": "",
+      "url": "https://thegrayzone.com/feed/"
+    },
+    "Middle East Eye": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 25,
+      "error": "",
+      "url": "https://www.middleeasteye.net/rss"
+    },
+    "Iran Intl": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 389,
+      "error": "not well-formed (invalid token): line 1, column 23930",
+      "url": "https://www.iranintl.com/rss"
+    },
+    "Times of Israel": {
+      "ok": true,
+      "items": 15,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 105,
+      "error": "",
+      "url": "https://www.timesofisrael.com/rss"
+    },
+    "Jerusalem Post": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 134,
+      "error": "",
+      "url": "https://www.jpost.com/rss/rssfeedsheadlines"
+    },
+    "Haaretz": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 150,
+      "error": "not well-formed (invalid token): line 10, column 2194",
+      "url": "https://www.haaretz.com/rss"
+    },
+    "Al Mayadeen": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 46,
+      "error": "not well-formed (invalid token): line 1, column 766",
+      "url": "https://www.almayadeen.net/rss"
+    },
+    "Press TV Iran": {
+      "ok": false,
+      "items": 0,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 3507,
+      "error": "not well-formed (invalid token): line 1, column 26",
+      "url": "https://www.presstv.ir/rss"
+    },
+    "TASS Russian": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 213,
+      "error": "",
+      "url": "http://tass.com/rss/v2.xml"
+    },
+    "RT News": {
+      "ok": true,
+      "items": 20,
+      "last_checked": "2026-03-05T10:00:02.073301+00:00",
+      "latency_ms": 442,
+      "error": "",
+      "url": "https://www.rt.com/rss"
+    }
+  }
+}

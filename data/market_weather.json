@@ -1,0 +1,47 @@
+{
+  "market": [],
+  "weather": [
+    {
+      "city": "London",
+      "temp_c": "9",
+      "desc": "Partly cloudy",
+      "humidity": "87"
+    },
+    {
+      "city": "Dubai",
+      "temp_c": "21",
+      "desc": "Haze",
+      "humidity": "88"
+    },
+    {
+      "city": "Singapore",
+      "temp_c": "25",
+      "desc": "Partly cloudy",
+      "humidity": "83"
+    },
+    {
+      "city": "Tokyo",
+      "temp_c": "17",
+      "desc": "Patchy rain nearby",
+      "humidity": "81"
+    },
+    {
+      "city": "Johannesburg",
+      "temp_c": "19",
+      "desc": "Partly cloudy",
+      "humidity": "83"
+    },
+    {
+      "city": "Warsaw",
+      "temp_c": "4",
+      "desc": "Light rain, mist, rain",
+      "humidity": "100"
+    },
+    {
+      "city": "Lagos",
+      "temp_c": "12",
+      "desc": "Mist",
+      "humidity": "95"
+    }
+  ]
+}

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Trump avoided in the State of the Union could haunt him in November | POLITICO</title>
+  <meta name="description" content="The president's state of the union was notable for something his second term has largely lacked: restraint.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../shared/styles.css">
+  
+  <style>
+    /* Article-specific styles */
+    .article-headline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 36px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+    
+    .article-subheadline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #666666;
+      font-weight: 400;
+    }
+    
+    .article-body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1A1A1A;
+    }
+    
+    .article-body p {
+      margin-bottom: 24px;
+    }
+    
+    .article-body .lead-paragraph {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #1A1A1A;
+    }
+    
+    .article-body a {
+      color: #1A1A1A;
+      text-decoration: underline;
+      text-decoration-color: #D60000;
+      text-underline-offset: 2px;
+      transition: color 0.15s ease;
+    }
+    
+    .article-body a:hover {
+      color: #D60000;
+    }
+    
+    .byline-author {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A1A;
+      transition: color 0.15s ease;
+    }
+    
+    .byline-author:hover {
+      color: #D60000;
+    }
+    
+    .timestamp {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #666666;
+    }
+    
+    .share-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #F5F5F5;
+      color: #666666;
+      transition: all 0.15s ease;
+    }
+    
+    .share-button:hover {
+      background-color: #D60000;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .featured-image-caption {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #666666;
+      line-height: 1.4;
+      padding: 12px 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+    
+    .featured-image-caption .credit {
+      color: #999999;
+      font-size: 12px;
+    }
+    
+    .related-article-link {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.4;
+      color: #1A1A1A;
+      transition: color 0.15s ease;
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+    
+    .related-article-link:hover {
+      color: #D60000;
+    }
+    
+    .related-section-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1A1A1A;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #1A1A1A;
+    }
+    
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    
+    .scroll-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Reading progress bar */
+    .reading-progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: transparent;
+      z-index: 500;
+    }
+    
+    .reading-progress-bar {
+      height: 100%;
+      background-color: #D60000;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    
+    /* Social icon inverse for footer */
+    .social-icon--inverse {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: #999999;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    
+    .social-icon--inverse:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .article-headline {
+        font-size: 28px;
+      }
+      
+      .article-subheadline {
+        font-size: 18px;
+      }
+      
+      .article-body .lead-paragraph {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar" id="reading-progress"></div>
+  </div>
+
+  <!-- ========================================
+       HEADER / NAVIGATION
+       ======================================== -->
+  <header id="site-header" class="sticky top-0 z-[300] bg-white">
+    <!-- Top Bar -->
+    <div class="bg-[#1A1A1A] text-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-9">
+          <!-- Left: Edition Links -->
+          <div class="flex items-center gap-4 text-xs font-medium">
+            <a href="#" class="hover:text-[#D60000] transition-colors flex items-center gap-1">
+              <i data-lucide="globe" class="w-3 h-3"></i>
+              Europe
+            </a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-[#D60000] transition-colors font-bold">Pro</a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-[#D60000] transition-colors">E&E News</a>
+          </div>
+          
+          <!-- Right: Utility Links -->
+          <div class="hidden md:flex items-center gap-4 text-xs">
+            <a href="#" class="hover:text-[#D60000] transition-colors">Subscribe</a>
+            <a href="#" class="hover:text-[#D60000] transition-colors">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="border-b border-gray-200 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <!-- Mobile Menu Button -->
+          <button 
+            id="mobile-menu-btn" 
+            class="lg:hidden p-2 -ml-2 hover:bg-gray-100 rounded transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="/" class="flex-shrink-0">
+            <span class="text-3xl lg:text-4xl font-black tracking-tight text-[#D60000]" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+              POLITICO
+            </span>
+          </a>
+
+          <!-- Desktop Search -->
+          <div class="hidden lg:flex items-center gap-4">
+            <button class="p-2 hover:bg-gray-100 rounded transition-colors" aria-label="Search">
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Search -->
+          <button class="lg:hidden p-2 -mr-2 hover:bg-gray-100 rounded transition-colors" aria-label="Search">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation (Desktop) -->
+    <nav class="hidden lg:block border-b border-gray-200 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-12">
+          <!-- Primary Nav Links -->
+          <ul class="flex items-center gap-1">
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Congress</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">White House</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Canada</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Defense</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Elections</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Energy</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Health Care</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Legal</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Tech</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">California</a>
+            </li>
+            <li>
+              <a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">New York</a>
+            </li>
+          </ul>
+
+          <!-- More Button -->
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+            More
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Secondary Navigation (Desktop) -->
+    <nav class="hidden lg:block bg-[#F5F5F5] border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center gap-6 h-9">
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Playbook</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Newsletters</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Columns</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Magazine</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Polling</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div 
+      id="mobile-menu" 
+      class="fixed inset-0 z-[400] bg-white transform -translate-x-full transition-transform duration-300 lg:hidden"
+      aria-hidden="true"
+    >
+      <!-- Mobile Menu Header -->
+      <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+        <span class="text-2xl font-black tracking-tight text-[#D60000]" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+          POLITICO
+        </span>
+        <button 
+          id="mobile-menu-close" 
+          class="p-2 hover:bg-gray-100 rounded transition-colors"
+          aria-label="Close menu"
+        >
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Content -->
+      <div class="overflow-y-auto h-[calc(100vh-64px)]">
+        <!-- Primary Links -->
+        <div class="px-4 py-4">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Sections</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Congress</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">White House</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Canada</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Defense</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Elections</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Energy</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Health Care</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Legal</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Tech</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">California</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">New York</a></li>
+          </ul>
+        </div>
+
+        <!-- Secondary Links -->
+        <div class="px-4 py-4 bg-[#F5F5F5]">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Features</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Playbook</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Newsletters</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Columns</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Magazine</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Polling</a></li>
+          </ul>
+        </div>
+
+        <!-- Edition Links -->
+        <div class="px-4 py-4">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Editions</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="globe" class="w-4 h-4"></i> Europe
+            </a></li>
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="briefcase" class="w-4 h-4"></i> Pro
+            </a></li>
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="zap" class="w-4 h-4"></i> E&E News
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Account Links -->
+        <div class="px-4 py-4 border-t border-gray-200">
+          <div class="flex items-center gap-4">
+            <a href="#" class="flex-1 py-3 text-center text-sm font-bold bg-[#D60000] text-white rounded hover:bg-[#B50000] transition-colors">Subscribe</a>
+            <a href="#" class="flex-1 py-3 text-center text-sm font-bold border border-gray-300 rounded hover:bg-gray-100 transition-colors">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div 
+      id="mobile-menu-backdrop" 
+      class="fixed inset-0 z-[350] bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+      aria-hidden="true"
+    ></div>
+  </header>
+
+  <!-- ========================================
+       ARTICLE CONTENT
+       ======================================== -->
+  <main class="min-h-screen">
+    <!-- Article Header -->
+    <header class="py-8 lg:py-12 border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-[700px] mx-auto">
+          <!-- Category Label -->
+          <div class="scroll-animate">
+            <a href="#" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D60000] mb-4 hover:underline">
+              <span class="w-1 h-4 bg-[#D60000]"></span>
+              White House
+            </a>
+          </div>
+          
+          <!-- Headline -->
+          <h1 class="article-headline mb-4 scroll-animate delay-100">
+            What Trump avoided in the State of the Union could haunt him in November
+          </h1>
+          
+          <!-- Subheadline -->
+          <p class="article-subheadline mb-6 scroll-animate delay-200">
+            The president's state of the union was notable for something his second term has largely lacked: restraint.
+          </p>
+          
+          <!-- Byline & Meta -->
+          <div class="flex flex-wrap items-center justify-between gap-4 py-4 border-t border-b border-gray-200 scroll-animate delay-300">
+            <div class="flex items-center gap-4">
+              <div>
+                <a href="#" class="byline-author">By Eli Stokols</a>
+                <p class="timestamp mt-1">02/25/2026 01:05 AM EST</p>
+              </div>
+            </div>
+            
+            <!-- Social Share Buttons -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-gray-500 mr-2 hidden sm:inline">Share:</span>
+              <a href="#" class="share-button" aria-label="Share on Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="share-button" aria-label="Share on X">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="#" class="share-button" aria-label="Share via Email">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="share-button" aria-label="Copy Link">
+                <i data-lucide="link" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="scroll-animate delay-400">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-[1000px] mx-auto">
+          <figure class="mb-0">
+            <div class="aspect-video overflow-hidden bg-gray-100">
+              <img 
+                src="https://kimi-web-img.moonshot.cn/img/d3i6fh83elv35t.cloudfront.net/745558f8be9fcb08bc1a2b590c3088ba2fd2a116.jpg" 
+                alt="President Donald Trump delivers his State of the Union address to a joint session of Congress at the U.S. Capitol"
+                class="w-full h-full object-cover"
+              >
+            </div>
+            <figcaption class="featured-image-caption">
+              President Donald Trump delivers his State of the Union address to a joint session of Congress at the U.S. Capitol on Tuesday. 
+              <span class="credit">| Francis Chung/POLITICO</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="py-8 lg:py-12">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-[700px] mx-auto">
+          <div class="article-body scroll-animate">
+            <p class="lead-paragraph">
+              WASHINGTON — President Donald Trump's State of the Union address was notable for something his second term has largely lacked: restraint. In a speech that lasted more than an hour and a half, Trump steered clear of the grievances and personal attacks that have defined his presidency, opting instead for a more measured tone that sought to project stability and competence.
+            </p>
+            
+            <p>
+              The speech, delivered to a joint session of Congress on Tuesday night, came at a pivotal moment in Trump's second term. With the midterm elections just eight months away, the president faces mounting pressure to demonstrate that his unconventional approach to governance can deliver results for the American people. The address offered him an opportunity to reset the narrative and present himself as a leader focused on policy achievements rather than political warfare.
+            </p>
+            
+            <p>
+              "The state of our union is stronger than ever before," Trump declared, echoing a line used by presidents for decades. But it was what he didn't say that may prove more significant in the long run. Gone were the extended riffs about election fraud, the attacks on the "fake news" media, and the personal insults directed at political opponents that have become staples of his public appearances.
+            </p>
+            
+            <p>
+              Instead, Trump focused on his administration's economic record, highlighting job creation numbers and stock market gains. He touted his trade policies, claiming that tariffs had brought manufacturing jobs back to the United States. And he emphasized his foreign policy achievements, including what he described as progress in negotiations with Ukraine and Russia.
+            </p>
+            
+            <p>
+              The president's decision to avoid controversial topics was not accidental, according to White House officials who previewed the speech. "This was about showing the American people that the president can be presidential," one senior administration official said, speaking on condition of anonymity to discuss internal deliberations. "The campaign is over. This is about governing."
+            </p>
+            
+            <p>
+              But the restraint that defined Tuesday night's address also carried risks. By avoiding the very issues that have energized his base — immigration, culture war battles, and attacks on the "deep state" — Trump may have left some supporters wondering whether he has lost his edge. At the same time, the speech did little to address the concerns of moderate voters who have grown weary of the chaos that has characterized his presidency.
+            </p>
+            
+            <p>
+              Democrats, for their part, were quick to dismiss the speech as a temporary departure from form. "This is the same Donald Trump we've seen for eight years," said Senate Majority Leader Chuck Schumer in a statement released immediately after the address. "One scripted speech doesn't erase the damage he's done to our institutions and our standing in the world."
+            </p>
+            
+            <p>
+              The president's performance was met with a predictable response from his audience. Republicans rose repeatedly to applaud, while Democrats remained seated for most of the speech, occasionally offering pointed glances at one another during Trump's more controversial claims. Several Democratic lawmakers walked out during the address, a protest that has become something of a tradition during Trump's speeches to Congress.
+            </p>
+            
+            <p>
+              What happens next will determine whether Tuesday night's restraint represents a genuine shift in Trump's approach or merely a tactical pause. The president has shown an ability to stay on message for brief periods before reverting to his more combative style. With the midterms approaching, the pressure to energize his base will only increase.
+            </p>
+            
+            <p>
+              For now, Trump's allies are hoping that the speech marks a turning point. "This is the president that can win in November," said one Republican strategist who has advised the White House. "If he can keep this up, he's going to be very difficult to beat."
+            </p>
+            
+            <p>
+              Whether he can keep it up remains the question that will define the remainder of his second term — and perhaps the future of American politics.
+            </p>
+          </div>
+          
+          <!-- Article Footer -->
+          <div class="mt-8 pt-6 border-t border-gray-200 scroll-animate">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-600">Share this article:</span>
+                <div class="flex items-center gap-2">
+                  <a href="#" class="share-button" aria-label="Share on Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i>
+                  </a>
+                  <a href="#" class="share-button" aria-label="Share on X">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="share-button" aria-label="Share via Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+              <a href="#" class="text-sm font-semibold text-[#D60000] hover:underline flex items-center gap-1">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Comments (247)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Articles Section -->
+    <section class="py-8 lg:py-12 bg-[#F5F5F5]">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-[700px] mx-auto">
+          <h2 class="related-section-title scroll-animate">More on this story</h2>
+          
+          <div class="space-y-0 scroll-animate">
+            <a href="#" class="related-article-link">
+              Fact-checking Trump's State of the Union claims on economy, immigration
+            </a>
+            <a href="#" class="related-article-link">
+              Democrats walk out during Trump's address in protest
+            </a>
+            <a href="#" class="related-article-link">
+              Analysis: What Trump's speech means for the midterms
+            </a>
+            <a href="#" class="related-article-link">
+              Full transcript: President Trump's 2026 State of the Union address
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="bg-[#1A1A1A] text-white">
+    <!-- Footer Main -->
+    <div class="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+        
+        <!-- Logo & Social Column -->
+        <div class="col-span-2 md:col-span-3 lg:col-span-1">
+          <a href="/" class="inline-block mb-6">
+            <span class="text-2xl font-black tracking-tight text-white" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+              POLITICO
+            </span>
+          </a>
+          <p class="text-sm text-gray-400 mb-6 max-w-xs">
+            POLITICO is the global authority on politics and policy, providing in-depth analysis and breaking news.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-2">
+            <a href="#" class="social-icon--inverse" aria-label="X (Twitter)">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon--inverse" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon--inverse" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon--inverse" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon--inverse" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sections Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Sections</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Congress</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">White House</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Canada</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Defense</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Elections</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Energy</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Health Care</a></li>
+          </ul>
+        </div>
+
+        <!-- More Sections Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">More</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Legal</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Tech</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">California</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">New York</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Florida</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Illinois</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">New Jersey</a></li>
+          </ul>
+        </div>
+
+        <!-- Features Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Features</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Playbook</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Newsletters</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Columns</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Magazine</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Polling</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Podcasts</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Video</a></li>
+          </ul>
+        </div>
+
+        <!-- Editions Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Editions</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">United States</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Europe</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Pro</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">E&E News</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Politico Studio</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Advertising</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Help</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h4 class="text-lg font-bold mb-2">Stay informed with POLITICO</h4>
+            <p class="text-sm text-gray-400">Get the latest political news and analysis delivered to your inbox.</p>
+          </div>
+          <form class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              class="px-4 py-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#D60000] transition-colors w-full sm:w-72"
+              required
+            >
+            <button 
+              type="submit" 
+              class="px-6 py-3 bg-[#D60000] text-white font-semibold text-sm uppercase tracking-wider rounded hover:bg-[#B50000] transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 lg:px-8 py-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p class="text-xs text-gray-500">
+            &copy; 2025 POLITICO LLC. All rights reserved.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Accessibility</a>
+            <a href="#" class="hover:text-white transition-colors">Do Not Sell My Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Scripts -->
+  <script src="../shared/scripts.js"></script>
+  
+  <!-- Page-specific Scripts -->
+  <script>
+    // Initialize Lucide icons
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+      
+      // Initialize scroll animations
+      initScrollAnimations();
+      
+      // Initialize reading progress
+      initReadingProgress();
+    });
+    
+    // Scroll-triggered animations
+    function initScrollAnimations() {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.scroll-animate').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.scroll-animate').forEach(function(el) {
+        observer.observe(el);
+      });
+    }
+    
+    // Reading progress indicator
+    function initReadingProgress() {
+      const progressBar = document.getElementById('reading-progress');
+      if (!progressBar) return;
+      
+      const article = document.querySelector('article');
+      if (!article) return;
+      
+      function updateProgress() {
+        const articleRect = article.getBoundingClientRect();
+        const articleHeight = article.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        const scrolled = Math.max(0, -articleRect.top + windowHeight);
+        const total = articleHeight + windowHeight;
+        const progress = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        
+        progressBar.style.width = progress + '%';
+      }
+      
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLITICO - Politics and Policy News</title>
+  <meta name="description" content="POLITICO is the global authority on politics and policy, providing in-depth analysis and breaking news.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../shared/styles.css">
+  
+  <style>
+    /* LIVE Badge Pulse Animation */
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    
+    .live-badge {
+      animation: livePulse 2s ease-in-out infinite;
+    }
+    
+    /* Scroll Reveal Animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    
+    .scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Stagger delays for lists */
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.1s; }
+    .stagger-3 { transition-delay: 0.15s; }
+    .stagger-4 { transition-delay: 0.2s; }
+    .stagger-5 { transition-delay: 0.25s; }
+    .stagger-6 { transition-delay: 0.3s; }
+    .stagger-7 { transition-delay: 0.35s; }
+    .stagger-8 { transition-delay: 0.4s; }
+    
+    /* Image hover zoom */
+    .img-zoom-container {
+      overflow: hidden;
+    }
+    
+    .img-zoom-container img {
+      transition: transform 0.3s ease;
+    }
+    
+    .img-zoom-container:hover img {
+      transform: scale(1.03);
+    }
+    
+    .img-zoom-hero:hover img {
+      transform: scale(1.02);
+    }
+    
+    /* News list item hover */
+    .news-list-item {
+      transition: background-color 0.2s ease;
+    }
+    
+    .news-list-item:hover {
+      background-color: #F5F5F5;
+    }
+    
+    .news-list-item:hover .headline-link {
+      color: #D60000;
+    }
+    
+    /* Headline link hover */
+    .headline-link {
+      transition: color 0.2s ease;
+    }
+    
+    /* Card hover lift */
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* Section label styling */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #D60000;
+    }
+    
+    .section-label::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      background-color: #D60000;
+    }
+    
+    /* Custom scrollbar for mobile menu */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  
+  <!-- ========================================
+       HEADER / NAVIGATION
+       ======================================== -->
+  <header id="site-header" class="sticky top-0 z-[300] bg-white">
+    <!-- Top Bar -->
+    <div class="bg-[#1A1A1A] text-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-9">
+          <!-- Left: Edition Links -->
+          <div class="flex items-center gap-4 text-xs font-medium">
+            <a href="#" class="hover:text-[#D60000] transition-colors flex items-center gap-1">
+              <i data-lucide="globe" class="w-3 h-3"></i>
+              Europe
+            </a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-[#D60000] transition-colors font-bold">Pro</a>
+            <span class="text-gray-600">|</span>
+            <a href="#" class="hover:text-[#D60000] transition-colors">E&E News</a>
+          </div>
+          
+          <!-- Right: Utility Links -->
+          <div class="hidden md:flex items-center gap-4 text-xs">
+            <a href="#" class="hover:text-[#D60000] transition-colors">Subscribe</a>
+            <a href="#" class="hover:text-[#D60000] transition-colors">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="border-b border-gray-200 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <!-- Mobile Menu Button -->
+          <button 
+            id="mobile-menu-btn" 
+            class="lg:hidden p-2 -ml-2 hover:bg-gray-100 rounded transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="/" class="flex-shrink-0">
+            <span class="text-3xl lg:text-4xl font-black tracking-tight text-[#D60000]" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+              POLITICO
+            </span>
+          </a>
+
+          <!-- Desktop Search -->
+          <div class="hidden lg:flex items-center gap-4">
+            <button class="p-2 hover:bg-gray-100 rounded transition-colors" aria-label="Search">
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Search -->
+          <button class="lg:hidden p-2 -mr-2 hover:bg-gray-100 rounded transition-colors" aria-label="Search">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation (Desktop) -->
+    <nav class="hidden lg:block border-b border-gray-200 bg-white">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-12">
+          <!-- Primary Nav Links -->
+          <ul class="flex items-center gap-1">
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Congress</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">White House</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Canada</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Defense</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Elections</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Energy</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Health Care</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Legal</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">Tech</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">California</a></li>
+            <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">New York</a></li>
+          </ul>
+
+          <!-- More Button -->
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+            More
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Secondary Navigation (Desktop) -->
+    <nav class="hidden lg:block bg-[#F5F5F5] border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center gap-6 h-9">
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Playbook</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Newsletters</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Columns</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Magazine</a>
+          <a href="#" class="text-xs font-semibold text-gray-700 hover:text-[#D60000] transition-colors">Polling</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div 
+      id="mobile-menu" 
+      class="fixed inset-0 z-[400] bg-white transform -translate-x-full transition-transform duration-300 lg:hidden"
+      aria-hidden="true"
+    >
+      <!-- Mobile Menu Header -->
+      <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+        <span class="text-2xl font-black tracking-tight text-[#D60000]" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+          POLITICO
+        </span>
+        <button 
+          id="mobile-menu-close" 
+          class="p-2 hover:bg-gray-100 rounded transition-colors"
+          aria-label="Close menu"
+        >
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Content -->
+      <div class="overflow-y-auto h-[calc(100vh-64px)] custom-scrollbar">
+        <!-- Primary Links -->
+        <div class="px-4 py-4">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Sections</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Congress</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">White House</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Canada</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Defense</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Elections</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Energy</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Health Care</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Legal</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">Tech</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">California</a></li>
+            <li><a href="#" class="block py-3 text-lg font-semibold border-b border-gray-100 hover:text-[#D60000] transition-colors">New York</a></li>
+          </ul>
+        </div>
+
+        <!-- Secondary Links -->
+        <div class="px-4 py-4 bg-[#F5F5F5]">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Features</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Playbook</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Newsletters</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Columns</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Magazine</a></li>
+            <li><a href="#" class="block text-sm font-semibold hover:text-[#D60000] transition-colors">Polling</a></li>
+          </ul>
+        </div>
+
+        <!-- Edition Links -->
+        <div class="px-4 py-4">
+          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Editions</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="globe" class="w-4 h-4"></i> Europe
+            </a></li>
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="briefcase" class="w-4 h-4"></i> Pro
+            </a></li>
+            <li><a href="#" class="flex items-center gap-2 text-sm font-semibold hover:text-[#D60000] transition-colors">
+              <i data-lucide="zap" class="w-4 h-4"></i> E&E News
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Account Links -->
+        <div class="px-4 py-4 border-t border-gray-200">
+          <div class="flex items-center gap-4">
+            <a href="#" class="flex-1 py-3 text-center text-sm font-bold bg-[#D60000] text-white rounded hover:bg-[#B50000] transition-colors">Subscribe</a>
+            <a href="#" class="flex-1 py-3 text-center text-sm font-bold border border-gray-300 rounded hover:bg-gray-100 transition-colors">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div 
+      id="mobile-menu-backdrop" 
+      class="fixed inset-0 z-[350] bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+      aria-hidden="true"
+    ></div>
+  </header>
+
+  <main>
+    <!-- ========================================
+         HERO / LIVE COVERAGE AREA
+         ======================================== -->
+    <section class="py-6 lg:py-8 border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <!-- LIVE Badge -->
+        <div class="flex items-center gap-2 mb-4 scroll-reveal">
+          <span class="live-badge px-2 py-1 bg-[#D60000] text-white text-xs font-black uppercase tracking-wider">LIVE</span>
+          <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide">State of the Union Coverage</span>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Main Featured Story -->
+          <article class="lg:col-span-2 scroll-reveal">
+            <a href="#" class="group block">
+              <div class="img-zoom-container img-zoom-hero relative aspect-[16/10] mb-4 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/npr.brightspotcdn.com/90a01308ef3f930d3e6db1ad485d89c48400c278" 
+                  alt="Donald Trump delivers State of the Union address"
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                >
+              </div>
+              <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-3 group-hover:text-[#D60000] transition-colors" style="font-family: Georgia, 'Times New Roman', serif;">
+                What Trump avoided in the State of the Union could haunt him in November
+              </h1>
+              <p class="text-base lg:text-lg text-gray-600 leading-relaxed mb-3">
+                The president showed uncharacteristic restraint during his 99-minute address, steering clear of personal grievances and controversial figures that have defined his political career. But the omissions speak volumes.
+              </p>
+              <div class="flex items-center gap-2 text-sm text-gray-500">
+                <span class="font-semibold text-gray-700">By Jonathan Lemire</span>
+                <span>|</span>
+                <span>2 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <!-- Side Column - Related Stories -->
+          <aside class="lg:col-span-1 scroll-reveal stagger-1">
+            <h2 class="section-label mb-4">Related Coverage</h2>
+            <div class="space-y-4">
+              <article class="pb-4 border-b border-gray-200">
+                <a href="#" class="group block">
+                  <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Analysis</span>
+                  <h3 class="text-base font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                    Five takeaways from Trump's marathon speech to Congress
+                  </h3>
+                  <span class="text-xs text-gray-500 mt-1 block">1 hour ago</span>
+                </a>
+              </article>
+              
+              <article class="pb-4 border-b border-gray-200">
+                <a href="#" class="group block">
+                  <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">White House</span>
+                  <h3 class="text-base font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                    Democrats respond with fiery rebuttals to Trump's address
+                  </h3>
+                  <span class="text-xs text-gray-500 mt-1 block">45 minutes ago</span>
+                </a>
+              </article>
+              
+              <article class="pb-4 border-b border-gray-200">
+                <a href="#" class="group block">
+                  <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Congress</span>
+                  <h3 class="text-base font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                    GOP lawmakers cheer as Trump outlines second-term agenda
+                  </h3>
+                  <span class="text-xs text-gray-500 mt-1 block">3 hours ago</span>
+                </a>
+              </article>
+              
+              <article>
+                <a href="#" class="group block">
+                  <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Fact Check</span>
+                  <h3 class="text-base font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                    Examining Trump's claims on economy, immigration
+                  </h3>
+                  <span class="text-xs text-gray-500 mt-1 block">4 hours ago</span>
+                </a>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         LATEST NEWS LIST
+         ======================================== -->
+    <section class="py-6 lg:py-8 border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between mb-4 scroll-reveal">
+          <h2 class="section-label mb-0">Latest News</h2>
+          <a href="#" class="text-sm font-semibold text-[#D60000] hover:underline flex items-center gap-1">
+            View All
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        
+        <div class="space-y-0">
+          <article class="news-list-item scroll-reveal stagger-1 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Defense</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Pentagon announces new troop deployments to Middle East amid rising tensions
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">12 min ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-2 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Tech</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Senate panel advances AI regulation bill with bipartisan support
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">28 min ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-3 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Health Care</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  CDC director faces grilling on Capitol Hill over vaccine policy changes
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">41 min ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-4 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Elections</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Virginia governor's race shaping up as key test for both parties
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">1 hour ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-5 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Energy</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Oil prices surge as OPEC considers production cuts
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">1 hour ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-6 py-4 border-b border-gray-200">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Legal</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Supreme Court to hear major case on federal agency power
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">2 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="news-list-item scroll-reveal stagger-7 py-4">
+            <a href="#" class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <div class="flex-shrink-0">
+                <span class="text-xs font-bold text-[#D60000] uppercase">Canada</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="headline-link text-base lg:text-lg font-bold leading-snug">
+                  Trudeau announces new trade measures amid U.S. tariff dispute
+                </h3>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="text-xs text-gray-500">2 hours ago</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         TOP NEWS GRID
+         ======================================== -->
+    <section class="py-8 lg:py-12 border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2 class="section-label mb-6 scroll-reveal">Top News</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Card 1 -->
+          <article class="card-hover scroll-reveal stagger-1">
+            <a href="#" class="group block">
+              <div class="img-zoom-container aspect-[16/9] mb-4 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/washington.org/4a58344c40b23ec729f29d3158fe322e33cd7efc.webp" 
+                  alt="U.S. Capitol Building"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <span class="text-xs font-bold text-[#D60000] uppercase mb-2 block">Congress</span>
+              <h3 class="text-xl font-bold leading-snug mb-2 group-hover:text-[#D60000] transition-colors">
+                House Republicans push forward with government funding bill
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Leadership races to secure votes as deadline approaches, facing resistance from conservative holdouts.
+              </p>
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="font-semibold text-gray-700">By Caitlin Emma</span>
+                <span>|</span>
+                <span>3 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <!-- Card 2 -->
+          <article class="card-hover scroll-reveal stagger-2">
+            <a href="#" class="group block">
+              <div class="img-zoom-container aspect-[16/9] mb-4 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/image.cnbcfm.com/0cb1ce5b70a2459971b891f7491e3cf3830689ef.jpeg" 
+                  alt="White House press briefing"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <span class="text-xs font-bold text-[#D60000] uppercase mb-2 block">White House</span>
+              <h3 class="text-xl font-bold leading-snug mb-2 group-hover:text-[#D60000] transition-colors">
+                Administration unveils new immigration enforcement priorities
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                The policy shift targets specific categories of undocumented immigrants while scaling back other operations.
+              </p>
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="font-semibold text-gray-700">By Anita Kumar</span>
+                <span>|</span>
+                <span>4 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <!-- Card 3 -->
+          <article class="card-hover scroll-reveal stagger-3">
+            <a href="#" class="group block">
+              <div class="img-zoom-container aspect-[16/9] mb-4 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/www.brookings.edu/8af7d5d17170fef0e43c0a4894ab55c38041eb85.jpg" 
+                  alt="Presidential debate stage"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <span class="text-xs font-bold text-[#D60000] uppercase mb-2 block">Elections</span>
+              <h3 class="text-xl font-bold leading-snug mb-2 group-hover:text-[#D60000] transition-colors">
+                Early polls show tight race in key swing states
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                New survey data reveals shifting demographics and voter priorities that could determine the outcome.
+              </p>
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="font-semibold text-gray-700">By Steven Shepard</span>
+                <span>|</span>
+                <span>5 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <!-- Card 4 -->
+          <article class="card-hover scroll-reveal stagger-4">
+            <a href="#" class="group block">
+              <div class="img-zoom-container aspect-[16/9] mb-4 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/static01.nytimes.com/e42033e613c5067da125f3f44fc9dcea8cdf2ff7.jpg" 
+                  alt="Legislation signing ceremony"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <span class="text-xs font-bold text-[#D60000] uppercase mb-2 block">Policy</span>
+              <h3 class="text-xl font-bold leading-snug mb-2 group-hover:text-[#D60000] transition-colors">
+                Bipartisan infrastructure projects face delays amid funding disputes
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                State and local officials press Congress to resolve allocation disagreements stalling critical upgrades.
+              </p>
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="font-semibold text-gray-700">By Tanya Snyder</span>
+                <span>|</span>
+                <span>6 hours ago</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         MORE HEADLINES
+         ======================================== -->
+    <section class="py-6 lg:py-8 border-b border-gray-200">
+      <div class="container mx-auto px-4 lg:px-8">
+        <h2 class="section-label mb-6 scroll-reveal">More Headlines</h2>
+        
+        <div class="space-y-4">
+          <article class="scroll-reveal stagger-1">
+            <a href="#" class="group flex gap-4">
+              <div class="img-zoom-container flex-shrink-0 w-24 h-16 lg:w-32 lg:h-20 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/www.aljazeera.com/ea9accd6691cd3c6daaf3d00a698911c6010e54b.jpg" 
+                  alt="Congress hearing"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <div class="flex-1">
+                <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Legal</span>
+                <h3 class="text-base lg:text-lg font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                  Jan. 6 committee members reflect on investigation's lasting impact
+                </h3>
+                <span class="text-xs text-gray-500 mt-1 block">7 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="scroll-reveal stagger-2">
+            <a href="#" class="group flex gap-4">
+              <div class="img-zoom-container flex-shrink-0 w-24 h-16 lg:w-32 lg:h-20 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/cdn.britannica.com/9cec57e08bb50e5fae61cd610b3a1a59f255bcd6.jpg" 
+                  alt="Congress in session"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <div class="flex-1">
+                <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Congress</span>
+                <h3 class="text-base lg:text-lg font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                  Senate confirms judicial nominees in late-night session
+                </h3>
+                <span class="text-xs text-gray-500 mt-1 block">8 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="scroll-reveal stagger-3">
+            <a href="#" class="group flex gap-4">
+              <div class="img-zoom-container flex-shrink-0 w-24 h-16 lg:w-32 lg:h-20 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/i.ytimg.com/5b4492702a774d24ccb701ce2a42f1c108cab530.jpg" 
+                  alt="White House press briefing"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <div class="flex-1">
+                <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Media</span>
+                <h3 class="text-base lg:text-lg font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                  White House press corps pushes for greater access
+                </h3>
+                <span class="text-xs text-gray-500 mt-1 block">9 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="scroll-reveal stagger-4">
+            <a href="#" class="group flex gap-4">
+              <div class="img-zoom-container flex-shrink-0 w-24 h-16 lg:w-32 lg:h-20 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/www.brookings.edu/5c7d9b6f66ab937ce579e55870abe27c3ebd8899.jpg" 
+                  alt="Senate hearing"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <div class="flex-1">
+                <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Defense</span>
+                <h3 class="text-base lg:text-lg font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                  Defense Secretary testifies on military readiness concerns
+                </h3>
+                <span class="text-xs text-gray-500 mt-1 block">10 hours ago</span>
+              </div>
+            </a>
+          </article>
+          
+          <article class="scroll-reveal stagger-5">
+            <a href="#" class="group flex gap-4">
+              <div class="img-zoom-container flex-shrink-0 w-24 h-16 lg:w-32 lg:h-20 bg-gray-100">
+                <img 
+                  src="https://kimi-web-img.moonshot.cn/img/d3i6fh83elv35t.cloudfront.net/f8c30eb0add5e46faa6134396264c49bba795b53.jpg" 
+                  alt="GOP debate"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                >
+              </div>
+              <div class="flex-1">
+                <span class="text-xs font-bold text-[#D60000] uppercase mb-1 block">Politics</span>
+                <h3 class="text-base lg:text-lg font-bold leading-snug group-hover:text-[#D60000] transition-colors">
+                  Republican governors gather to discuss 2026 strategy
+                </h3>
+                <span class="text-xs text-gray-500 mt-1 block">11 hours ago</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         PODCASTS / NEWSLETTERS SECTION
+         ======================================== -->
+    <section class="py-8 lg:py-12">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- Playbook Promo -->
+          <div class="scroll-reveal bg-[#F5F5F5] p-6 lg:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-16 h-16 bg-[#D60000] rounded flex items-center justify-center">
+                <i data-lucide="newspaper" class="w-8 h-8 text-white"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Playbook</h3>
+                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                  The must-read morning briefing for Washington insiders. Get the scoop on what's happening in D.C. before anyone else.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-[#D60000] hover:underline">
+                  Subscribe to Playbook
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="scroll-reveal stagger-1 bg-[#1A1A1A] text-white p-6 lg:p-8">
+            <h3 class="text-xl font-bold mb-2">Stay Informed</h3>
+            <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+              Get the latest political news and analysis delivered straight to your inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#D60000] transition-colors text-sm"
+                required
+              >
+              <button 
+                type="submit" 
+                class="px-6 py-3 bg-[#D60000] text-white font-semibold text-sm uppercase tracking-wider rounded hover:bg-[#B50000] transition-colors whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-3">
+              By subscribing, you agree to our <a href="#" class="underline hover:text-white">Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="bg-[#1A1A1A] text-white">
+    <!-- Footer Main -->
+    <div class="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+        
+        <!-- Logo & Social Column -->
+        <div class="col-span-2 md:col-span-3 lg:col-span-1">
+          <a href="/" class="inline-block mb-6">
+            <span class="text-2xl font-black tracking-tight text-white" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+              POLITICO
+            </span>
+          </a>
+          <p class="text-sm text-gray-400 mb-6 max-w-xs">
+            POLITICO is the global authority on politics and policy, providing in-depth analysis and breaking news.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-2">
+            <a href="#" class="social-icon social-icon--inverse" aria-label="X (Twitter)">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon social-icon--inverse" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon social-icon--inverse" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon social-icon--inverse" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="social-icon social-icon--inverse" aria-label="YouTube">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sections Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Sections</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Congress</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">White House</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Canada</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Defense</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Elections</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Energy</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Health Care</a></li>
+          </ul>
+        </div>
+
+        <!-- More Sections Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">More</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Legal</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Tech</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">California</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">New York</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Florida</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Illinois</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">New Jersey</a></li>
+          </ul>
+        </div>
+
+        <!-- Features Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Features</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Playbook</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Newsletters</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Columns</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Magazine</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Polling</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Podcasts</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Video</a></li>
+          </ul>
+        </div>
+
+        <!-- Editions Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Editions</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">United States</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Europe</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Pro</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">E&E News</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Politico Studio</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Advertising</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Help</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h4 class="text-lg font-bold mb-2">Stay informed with POLITICO</h4>
+            <p class="text-sm text-gray-400">Get the latest political news and analysis delivered to your inbox.</p>
+          </div>
+          <form class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              class="px-4 py-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#D60000] transition-colors w-full sm:w-72"
+              required
+            >
+            <button 
+              type="submit" 
+              class="px-6 py-3 bg-[#D60000] text-white font-semibold text-sm uppercase tracking-wider rounded hover:bg-[#B50000] transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 lg:px-8 py-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p class="text-xs text-gray-500">
+            &copy; 2025 POLITICO LLC. All rights reserved.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Accessibility</a>
+            <a href="#" class="hover:text-white transition-colors">Do Not Sell My Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Scripts -->
+  <script src="../shared/scripts.js"></script>
+  
+  <!-- Page-specific Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+    
+    // Mobile Menu Toggle
+    (function() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+
+      if (!menuBtn || !mobileMenu) return;
+
+      function openMenu() {
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        
+        if (backdrop) {
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.classList.add('opacity-100');
+        }
+        
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        }, 50);
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        
+        if (backdrop) {
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+        
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.getAttribute('aria-hidden') === 'false') {
+          closeMenu();
+        }
+      });
+
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          if (window.innerWidth >= 1024 && mobileMenu.getAttribute('aria-hidden') === 'false') {
+            closeMenu();
+          }
+        }, 150);
+      });
+    })();
+
+    // Header Scroll Shadow
+    (function() {
+      const header = document.getElementById('site-header');
+      if (!header) return;
+
+      let ticking = false;
+      const scrollThreshold = 100;
+
+      function updateHeader() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > scrollThreshold) {
+          header.classList.add('shadow-md');
+        } else {
+          header.classList.remove('shadow-md');
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    // Scroll Reveal Animation with IntersectionObserver
+    (function() {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
